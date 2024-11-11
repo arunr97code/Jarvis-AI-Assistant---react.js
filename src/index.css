@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+body{
+  background-color: white;
+  /* color: #F1F1F1; Soft White for text */
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+@media (max-width:391px) {
+  .result{
+    max-height: 70vh;
+  }
+}
+@layer components{
+  .recent-entry{
+    @apply flex items-start gap-2 py-2 rounded-full text-[#282828] cursor-pointer hover:bg-[#e2e6eb];
+  }
+  .gradient-1{
+    background: linear-gradient(to top, #C8102E, #F1C40F);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .card-item{
+    @apply h-48 p-4 bg-[#f0f4f9] rounded-lg relative cursor-pointer;
+  }
+  .card-img{
+    @apply w-9 p-1 absolute bg-white rounded-full bottom-2 right-2;
+  }
+  .load-anim{
+    @apply rounded-sm border-none bg-[#f6f7f8] bg-[length:800px_50px] h-5;
+  }
+ 
+}
+
+@layer utilities{
+  .img-icon{
+    width: 23px;
+  }
+
+  .result::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .loader hr{
+    /* background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff); */
+    background: linear-gradient(90deg, #9ed7ff, #ffffff, #9ed7ff);
+    background-size: 200% 100%; /* Double width for smooth animation */
+    animation: gradientAnimation 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes gradientAnimation {
+    0%{
+      background-position: 200% 0;
+    }
+    100%{
+      background-position: -200% 0;
+    }
+  }
+
+  .recent{
+    animation: fadeIn 1.5s;
+  }
+  
+}
