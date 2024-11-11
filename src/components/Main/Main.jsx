@@ -74,7 +74,7 @@ const Main = () => {
             {/* Chat Input */}
             <section className={` main-bottom ${recentPrompt ? 'fixed bottom-0' : ' relative -bottom-2/3'} w-full max-w-4xl m-auto px-3 sm:bottom-0 sm:absolute`}>
                 <div className='search-box flex items-center justify-between gap-5 bg-[#f0f4f9] py-1 px-3 rounded-full sm:py-2 sm:px-5'>
-                    <input onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} value={input} type="text" placeholder='Enter a prompt here'    className='flex-none w-60 bg-transparent border-none outline-none p-2 text-lg sm:flex-1 sm:w-0'/>
+                    <input onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} value={input} type="text" placeholder='Enter a prompt here'    className='flex-none w-48 bg-transparent border-none outline-none p-2 text-lg sm:flex-1 sm:w-0'/>
                     <div className='flex items-center gap-3 sm:gap-4'>
                         <img src={assets.gallery_icon} alt="" className='w-6 cursor-pointer sm:w-7'/>
                         <img src={assets.mic_icon} alt="" className='w-6 cursor-pointer sm:w-7'/>
