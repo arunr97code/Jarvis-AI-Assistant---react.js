@@ -8,7 +8,8 @@ import {
   } from "@google/generative-ai"
   
   
-  const apiKey = import.meta.env.VITE_API_KEY;
+  // const apiKey = import.meta.env.VITE_API_KEY;
+  const apiKey = "AIzaSyDb6E6x8169ctqRMW7-zMIvX542IViGSdY";
   if(!apiKey){
     console.log('API is not defined');
   }
